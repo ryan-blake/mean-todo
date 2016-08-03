@@ -4,18 +4,20 @@ export default function($scope, todoFactory) {
   let params = {
     createHasInput: false
   };
-  $scope.todos = [
-    {
-      task: 'do dishes',
-      isCompleted: false,
-      isEditing: false
-    },
-    {
-      task: 'do this',
-      isCompleted: true,
-      isEditing: false
-    }
-  ];
+  // $scope.todos = [
+  //   {
+  //     task: 'do dishes',
+  //     isCompleted: false,
+  //     isEditing: false
+  //   },
+  //   {
+  //     task: 'do this',
+  //     isCompleted: true,
+  //     isEditing: false
+  //   }
+  // ];
+
+  todoFactory.getTasks($scope);
 
 
   $scope.onCompletedClick = todo => {
@@ -45,7 +47,7 @@ export default function($scope, todoFactory) {
   //   todo.task = todo.updatedTask;
   //   todo.isEditing = false;
   // };
-    $scope.updateTask = _.partial(updateTask);
+    $scope.updateTask = _.partial(updateTask, $scope);
 
 
   // $scope.deleteTask = todoToDelete => {
