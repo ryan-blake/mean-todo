@@ -1,6 +1,8 @@
 # mean-todo
 git clone git@github.com:ryan-blake/mean-todo.git
+
 cd mean-todo
+
 npm install
 
 #Usage
